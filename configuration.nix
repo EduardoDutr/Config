@@ -120,6 +120,7 @@
     fastfetch
     picom
     xfce.thunar
+    wlogout
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
