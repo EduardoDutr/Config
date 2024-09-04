@@ -1,13 +1,19 @@
+{ user, ...}:
+
 {
   programs.fastfetch = {
     enable = true;
     settings =
       {
         logo = {
-            type = "small";
+            type = "kitty-direct";
+            source = "/home/${user}/flake/assets/nix/nix-snowflake-white.png";
             padding = {
                 top = 1;
+                right = 0;
             };
+            width = 20;
+            height = 10;
         };
         display = {
             separator = " ";
