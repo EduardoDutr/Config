@@ -82,23 +82,41 @@ awful.layout.layouts = {
 -- {{{ Menu
 -- Create a launcher widget and a main menu
 myawesomemenu = {
-   { "hotkeys", function() hotkeys_popup.show_help(nil, awful.screen.focused()) end },
-   { "manual", terminal .. " -e man awesome" },
-   { "edit config", editor_cmd .. " " .. awesome.conffile },
-   { "restart", awesome.restart },
-   { "quit awesome", function() awesome.quit() end },
+    {
+		"Hotkeys",
+		function()
+			hotkeys_popup.show_help(nil, awful.screen.focused())
+		end,
+	},
+	{ "Manual", terminal .. " -e man awesome" },
+	{ "Edit config", editor_cmd .. " " .. awesome.conffile },
+	{ "Terminal", terminal , "/home/eduardo/flake/assets/awesome/kitty.svg"},
+	{ "Restart awesome", awesome.restart },
 }
 
-mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu, beautiful.awesome_icon },
-                                    { "open terminal", terminal },
-                                    { "wlogout", "wlogout" },
-                                  }
-                        })
+mymainmenu = awful.menu({   
+    items = { 
+        { "awesome", myawesomemenu, beautiful.awesome_icon },
+        { "Terminal", terminal , "/home/eduardo/flake/assets/awesome/kitty.svg"},
+        { "Logout", function() awesome.quit() end, "/home/eduardo/flake/assets/awesome/logout.png" },
+        { "Reboot", "reboot", "/home/eduardo/flake/assets/awesome/reboot.png"},
+        { "Shutdown", "shutdown now", "/home/eduardo/flake/assets/awesome/power.png"},
+    },
+    theme = {
+        width = 250,
+        height = 30,
+        font = "DroidSansMono 14",
+        bg_normal = "#00000080",
+        bg_focus = "#729fcf",
+        border_width = 3,
+        border_color = "#000000",
+    },
+})
 
-praisewidget = wibox.widget.textbox()
-praisewidget.text = "You are great!"
-mylauncher = awful.widget.launcher({ image = "/home/eduardo/Downloads/nix-snowflake-white.svg",
+
+mylauncher = awful.widget.launcher({ image = "/home/eduardo/flake/assets/nix/nix-snowflake-white.svg",
                                      menu = mymainmenu })
+
 
 -- Menubar configuration
 menubar.utils.terminal = terminal -- Set the terminal for applications that require it
