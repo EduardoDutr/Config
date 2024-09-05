@@ -39,6 +39,7 @@
       bibata-cursors
       catppuccin-gtk
       papirus-icon-theme
+      rofi
     ];
     stateVersion = "24.05";
   };

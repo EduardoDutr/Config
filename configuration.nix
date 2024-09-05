@@ -69,7 +69,6 @@
   services.printing.enable = true;
 
   # Enable sound with pipewire.
-  hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
@@ -120,7 +119,7 @@
     fastfetch
     picom
     xfce.thunar
-    wlogout
+    pavucontrol
   ];
 
   # Some programs need SUID wrappers, can be configured further or are

@@ -112,8 +112,8 @@ function _M.get()
 				end,
 				{description = "lua execute prompt", group = "awesome"}),
 		-- Menubar
-		awful.key({ modkey }, "d", function() menubar.show() end,
-				{description = "show the menubar", group = "launcher"})
+		awful.key({ modkey }, "d", function () awful.spawn("rofi -show drun") end,
+				{description = "rofi launcher", group = "launcher"})
 	)
 
 	return globalkeys
